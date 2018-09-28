@@ -1,0 +1,429 @@
+[
+    {
+        "id": "b58a294c.b63098",
+        "type": "cpu",
+        "z": "cbe736d1.ca0e48",
+        "name": "",
+        "msgCore": true,
+        "msgOverall": false,
+        "x": 470,
+        "y": 1160,
+        "wires": [
+            [
+                "8e7ef84f.b3e7f8",
+                "b820cbf7.e62ab8",
+                "953cfba6.cc1e78"
+            ]
+        ]
+    },
+    {
+        "id": "ccffb177.cfaaf",
+        "type": "inject",
+        "z": "cbe736d1.ca0e48",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 270,
+        "y": 1060,
+        "wires": [
+            [
+                "2803e47b.aa444c"
+            ]
+        ]
+    },
+    {
+        "id": "8e7ef84f.b3e7f8",
+        "type": "ui_chart",
+        "z": "cbe736d1.ca0e48",
+        "name": "",
+        "group": "84c0a832.81d028",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 650,
+        "y": 1120,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "a38222b5.ab339",
+        "type": "ui_gauge",
+        "z": "cbe736d1.ca0e48",
+        "name": "",
+        "group": "3aeb3fcf.0db02",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "CPU 1",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 340,
+        "y": 1380,
+        "wires": []
+    },
+    {
+        "id": "f98ec04b.0061d",
+        "type": "ui_gauge",
+        "z": "cbe736d1.ca0e48",
+        "name": "",
+        "group": "3aeb3fcf.0db02",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "CPU 2",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 340,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "31fa391.592e1c6",
+        "type": "ui_gauge",
+        "z": "cbe736d1.ca0e48",
+        "name": "",
+        "group": "3aeb3fcf.0db02",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "CPU 3",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 340,
+        "y": 1500,
+        "wires": []
+    },
+    {
+        "id": "5ee9bd4a.1ff9d4",
+        "type": "ui_gauge",
+        "z": "cbe736d1.ca0e48",
+        "name": "",
+        "group": "3aeb3fcf.0db02",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "CPU 4",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 340,
+        "y": 1560,
+        "wires": []
+    },
+    {
+        "id": "b820cbf7.e62ab8",
+        "type": "switch",
+        "z": "cbe736d1.ca0e48",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "core_1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "core_2",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "core_3",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "core_4",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 180,
+        "y": 1340,
+        "wires": [
+            [
+                "a38222b5.ab339"
+            ],
+            [
+                "f98ec04b.0061d"
+            ],
+            [
+                "31fa391.592e1c6"
+            ],
+            [
+                "5ee9bd4a.1ff9d4"
+            ]
+        ]
+    },
+    {
+        "id": "43832fc0.c4d64",
+        "type": "ui_toast",
+        "z": "cbe736d1.ca0e48",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "topic": "",
+        "name": "",
+        "x": 880,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "953cfba6.cc1e78",
+        "type": "function",
+        "z": "cbe736d1.ca0e48",
+        "name": "Set text for notification",
+        "func": "let val = msg.payload;\nlet coreName = msg.topic;\nmsg.payload = 'Alert: CPU ' + coreName + ' is ' + val + '%';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 540,
+        "y": 1340,
+        "wires": [
+            [
+                "8a479d5c.deea6"
+            ]
+        ]
+    },
+    {
+        "id": "8a479d5c.deea6",
+        "type": "switch",
+        "z": "cbe736d1.ca0e48",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "50",
+                "vt": "str"
+            },
+            {
+                "t": "lte",
+                "v": "50",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 730,
+        "y": 1300,
+        "wires": [
+            [
+                "43832fc0.c4d64"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "91fc9f3e.e67e9",
+        "type": "ui_switch",
+        "z": "cbe736d1.ca0e48",
+        "name": "",
+        "label": "switch",
+        "group": "b24e48ba.743008",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": "false",
+        "topic": "",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "x": 410,
+        "y": 940,
+        "wires": [
+            [
+                "1ff55133.a72d9f"
+            ]
+        ]
+    },
+    {
+        "id": "2803e47b.aa444c",
+        "type": "switch",
+        "z": "cbe736d1.ca0e48",
+        "name": "",
+        "property": "SwitchStatus",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "else"
+            },
+            {
+                "t": "eq",
+                "v": "true",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 550,
+        "y": 1060,
+        "wires": [
+            [],
+            [
+                "b58a294c.b63098"
+            ]
+        ]
+    },
+    {
+        "id": "1ff55133.a72d9f",
+        "type": "function",
+        "z": "cbe736d1.ca0e48",
+        "name": "Set switch status",
+        "func": "global.set('SwitchStatus',msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 610,
+        "y": 940,
+        "wires": [
+            [
+                "2803e47b.aa444c"
+            ]
+        ]
+    },
+    {
+        "id": "81ceb1de.2af77",
+        "type": "function",
+        "z": "cbe736d1.ca0e48",
+        "name": "Switch off",
+        "func": "msg.enabled = false;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 240,
+        "y": 940,
+        "wires": [
+            [
+                "91fc9f3e.e67e9"
+            ]
+        ]
+    },
+    {
+        "id": "84c0a832.81d028",
+        "type": "ui_group",
+        "z": "",
+        "name": "CPU Utilization",
+        "tab": "a12f9de6.45ab1",
+        "order": 2,
+        "disp": true,
+        "width": "8",
+        "collapse": false
+    },
+    {
+        "id": "3aeb3fcf.0db02",
+        "type": "ui_group",
+        "z": "",
+        "name": "CPU Gauges",
+        "tab": "a12f9de6.45ab1",
+        "order": 3,
+        "disp": true,
+        "width": "3",
+        "collapse": false
+    },
+    {
+        "id": "b24e48ba.743008",
+        "type": "ui_group",
+        "z": "",
+        "name": "CPU On/Off",
+        "tab": "a12f9de6.45ab1",
+        "order": 1,
+        "disp": true,
+        "width": "3",
+        "collapse": false
+    },
+    {
+        "id": "a12f9de6.45ab1",
+        "type": "ui_tab",
+        "z": "",
+        "name": "CPU",
+        "icon": "dashboard",
+        "order": 3
+    }
+]
